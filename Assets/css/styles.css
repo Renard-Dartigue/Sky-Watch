@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================HEADER================================================================================================ */
+header {
+    background: linear-gradient(-90deg, rgb(16, 238, 153) 0%, rgb(0, 29, 48) 100%);
+    border-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+/* ================================BODY================================================================================================ */
+
+h1{
+    background-size: auto;
+    margin-bottom: -1%;
+    font-size: 4rem;
+    font-family: 'Teko', sans-serif;
+    padding-right: 860px;
+    color: white;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.display-3 {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.p-5 {
+    padding: 3rem!important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+content{
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
+}
