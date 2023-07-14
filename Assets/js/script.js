@@ -76,17 +76,18 @@ fetch(
 
 
 function forCast(data){
+    console.log(data.city.name) //DO NOT TOUCH
     weekday.innerHTML = ""
-    for( var i = 7; i < data.list.lenght; i += 8){
-        const {name} = data.content
+    for( var i = 7; i < data.list.length; i += 8){
+        const {name} = data.city
         const {icon, description} = data.list[i].weather[0];
         const {temp, humidity} = data.list[i].main;
         let date = dayjs().format("MM,DD,YYYY")
 
         var Day1 = document.createElement("div")
         var Day2 = document.createElement("h2")
-        var Day3 = document.createElement("h2")
-        var Day4 = document.createElement("img")
+        var Day4 = document.createElement("h2")
+        var Day3 = document.createElement("img")
         var Day5 = document.createElement("h2")
         var Day6 = document.createElement("h2")
 
@@ -112,11 +113,11 @@ function forCast(data){
 }
 
 function savedCity(content) {
-    savedDay = JSON.parse(localStorage.getItem(cities)) 
+    savedDay = JSON.parse(localStorage.getItem("cities")) 
     if (savedDay === null) {
         savedDay = []
     }
-    if(!savedDay.incudes(content)) {
+    if(!savedDay.includes(content)) {
         savedDay.push(content)
         localStorage.setItem("cities", JSON.stringify(savedDay))
         displayStorage()
@@ -126,7 +127,7 @@ function savedCity(content) {
 function displayStorage() {
     preVious.innerHTML = ""
     for (let index = 0; index < savedDay.length; index++) {
-        var history = savedDay[i]
+        var history = savedDay[index]
         historyList = document.createElement("div")
         historyList.innerText = history
         preVious.append(historyList)
