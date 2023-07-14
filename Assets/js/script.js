@@ -33,8 +33,20 @@ function displayCurrent(data) {
     const {icon, description} = data.weather[0];
     const {temp, humidity} = data.main;
     let date = dayjs().format("MM,DD,YYYY")
+
+
     weather.innerText = name;
+    var toDay = document.createElement("h2")
+    var iMage = document.createElement("img")
+    var temPer = document.createElement("h2")
+    var huMid = document.createElement("h2")
     var dayOf = document.createElement("h2")
+
+    toDay.innterText = date
+    iMage.src = "https://openweathermap.org/image/wn/" + icon + ".png"
+    temPer.innerText = temp
+    huMid.innerText = humidity
     dayOf.innerText = description
-    weather.append(dayOf)
+    
+    weather.append(dayOf, toDay, iMage, temPer, huMid)
 }
