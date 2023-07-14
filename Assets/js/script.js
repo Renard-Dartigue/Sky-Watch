@@ -1,17 +1,27 @@
-var APIkay = "dd83042ea75a21d5ccc79e4363a69ff7";
+var apiKey = "dd83042ea75a21d5ccc79e4363a69ff7";
 var searchBtn = document.getElementById("search-btn")
 var searchCity = document.getElementById("search-city")
 
-function search() {
-    var content = searchCity.value 
-    console.log(content)
+searchBtn.addEventListener("click", function(event){
+    event.preventDefault();
+    var content = (document.getElementById("current-weather").value.trim())
+    search(content)
+})
+    //function to fetch data and send to boxes
+function search(content) {
+    fetch(
+    "https://api.openweathermap.org/data/2.5/forecast?q="
+    + content
+    + "&units=imperial"
+    + "&appid="
+    + apiKey
+    )
+    
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => displayCurrent(data))
+        console.log(data);
+    
 
-    var url = "https://api.openweathermap.org/data/2.5/forcast?q="+ content + "$appid=" + APIKey + "&units=imperial"
-
-    console.log(url)
-
-    fetch(url)
-    .then(function(response)) {
-        return response.json()
-    }
 }
